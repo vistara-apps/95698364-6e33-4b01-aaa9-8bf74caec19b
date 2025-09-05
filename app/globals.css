@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  html {
+    @apply dark;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white min-h-screen;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white bg-opacity-5 backdrop-blur-lg border border-white border-opacity-10 rounded-lg shadow-card-dark;
+  }
+  
+  .metric-card {
+    @apply glass-card p-4 hover:bg-opacity-10 transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply glass-card text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-10 transition-all duration-200;
+  }
+  
+  .protocol-card {
+    @apply glass-card p-6 hover:bg-opacity-10 transition-all duration-200 cursor-pointer;
+  }
+  
+  .yield-card {
+    @apply glass-card p-4 hover:bg-opacity-10 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  
+  .border-gradient {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+    border-radius: 8px;
+    padding: 1px;
+  }
+  
+  .border-gradient > div {
+    @apply bg-slate-900 rounded-lg;
+  }
+}
